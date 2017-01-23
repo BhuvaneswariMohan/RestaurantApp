@@ -18,6 +18,12 @@ CREATE PROCEDURE PLACE_ORDER(IN SEAT INT,IN ITEM MEDIUMTEXT,IN QUANTITY MEDIUMTE
           SET temp=(LENGTH(ITEM)-LENGTH(REPLACE(ITEM,',','')))+1;
           IF (temp<=5)
           THEN 
+          
+         IF (SEAT_VERIFICATION(SEAT))
+         THEN
+         UPDATE SEAT SET STATUS='UNAVAILABLE' WHERE  SEAT_NO=SEAT;
+          SELECT CHECK_SERVICE();
+
                                   
           iterator :
           LOOP    
@@ -37,12 +43,17 @@ CREATE PROCEDURE PLACE_ORDER(IN SEAT INT,IN ITEM MEDIUMTEXT,IN QUANTITY MEDIUMTE
                  SET ITEM = INSERT(ITEM,1,_nextlen1 + 1,'');
                  SET QUANTITY = INSERT(QUANTITY,1,_nextlen2 + 1,'');
          END LOOP; 
-         END IF;  
           
-                 UPDATE  SEAT SET STATUS='AVAILABLE' WHERE SEAT_NO=SEAT;
+         
+         ELSE 
+	 SELECT 'NO SEATS';
+         END IF;
+         END IF; 
+          
+                 UPDATE  SEAT SET STATUS='AVAILABLE',CHECK_SEAT=0 WHERE SEAT_NO=SEAT; 
+                 
     END $$
 DELIMITER ;
 
 
-
-CALL PLACE_ORDER(3,'TEA,COFFE,IDLY','3,5,1')
+CALL PLACE_ORDER(5,'SOUTH INDIAN MEALS,NORTH INDIAN THALI','1,2')

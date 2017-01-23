@@ -67,22 +67,23 @@ INSERT INTO `item_quantity` (`ID`, `FOOD_TYPE`, `MENU_TYPE`, `QTY`) VALUES('16',
 
 
 
-CREATE TABLE `seat` ( 
- `ID` INT(11) NOT NULL, 
- `SEAT_NO` INT(11) NOT NULL,
- `STATUS` VARCHAR(50) NOT NULL,  PRIMARY KEY (`ID`));
+CREATE TABLE `seat` (  `ID` int(11) NOT NULL,
+  `SEAT_NO` int(11) NOT NULL,
+  `STATUS` varchar(20) DEFAULT 'AVAILABLE',
+  `CHECK_SEAT` tinyint(1) DEFAULT '0',  PRIMARY KEY (`ID`))
 
 
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('1','1','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('2','2','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('3','3','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('4','4','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('5','5','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('6','6','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('7','7','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('8','8','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('9','9','AVAILABLE');
-INSERT INTO `seat` (`ID`, `SEAT_NO`, `STATUS`) VALUES('10','10','AVAILABLE');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('1','1','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('2','2','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('3','3','AVAILABLE','1');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('4','4','AVAILABLE','1');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('5','5','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('6','6','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('7','7','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('8','8','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('9','9','AVAILABLE','0');
+insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('10','10','AVAILABLE','0');
+
 
 
 
