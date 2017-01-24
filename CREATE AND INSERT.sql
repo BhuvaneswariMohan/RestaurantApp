@@ -95,3 +95,27 @@ insert into `seat` (`ID`, `SEAT_NO`, `STATUS`, `CHECK_SEAT`) values('10','10','A
 `BILL_AMOUNT` BIGINT(30) DEFAULT NULL, 
  `ORDER_DATE` DATETIME DEFAULT NULL, 
  `STATUS` VARCHAR(30) DEFAULT NULL,  PRIMARY KEY (`ID`)) ;
+
+
+
+
+
+
+CREATE TABLE `orders_taken` ( 
+ `ID` int(11) NOT NULL,
+  `SEAT_NO` int(11) NOT NULL,
+  `ITEM_ID` int(11) NOT NULL,
+  `QTY` int(11) NOT NULL,
+  `ORDERED_DATE_TIME` datetime DEFAULT NULL);
+
+
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('340','6','7','1','2017-01-24 10:38:28');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('672','6','7','1','2017-01-24 10:43:20');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('849','6','7','1','2017-01-24 10:43:58');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('401','6','7','1','2017-01-24 10:44:13');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('821','6','7','1','2017-01-24 10:44:34');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('867','6','7','1','2017-01-24 10:45:39');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('101','6','7','1','2017-01-24 10:45:39');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('654','6','7','1','2017-01-24 10:46:52');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('916','6','7','1','2017-01-24 10:46:52');
+insert into `orders_taken` (`ID`, `SEAT_NO`, `ITEM_ID`, `QTY`, `ORDERED_DATE_TIME`) values('206','6','7','1','2017-01-24 10:54:57');

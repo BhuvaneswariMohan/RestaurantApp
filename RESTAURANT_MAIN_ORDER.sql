@@ -42,13 +42,14 @@ CREATE PROCEDURE PLACE_ORDER(IN SEAT INT,IN ITEM MEDIUMTEXT,IN QUANTITY MEDIUMTE
                 
                  SET ITEM = INSERT(ITEM,1,_nextlen1 + 1,'');
                  SET QUANTITY = INSERT(QUANTITY,1,_nextlen2 + 1,'');
+
          END LOOP; 
-          SELECT CONCAT('ORDER PLACED, YOUR ORDER ID:',ORDER_ID) AS COMMENTS;
-         
+           
          ELSE 
 	 SELECT 'NO SEATS';
          END IF;
          END IF; 
+		
           
                  UPDATE  SEAT SET STATUS='AVAILABLE',CHECK_SEAT=0 WHERE SEAT_NO=SEAT; 
                  
